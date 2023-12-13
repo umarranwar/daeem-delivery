@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./index.css";
+import Contact from "./components/Contact";
+import { Routes, Route } from "react-router-dom";
 
+import Layout from "./components/Layout";
+import FAQ from "./components/accordians/FAQ";
+import TermsAndConditions from "./components/accordians/TermsAndConditions";
+import ReturnPolicy from "./components/accordians/ReturnPolicy";
+import PrivacyPolicy from "./components/accordians/PrivacyPolicy";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="faq" element={<FAQ />} />
+        <Route path="terms" element={<TermsAndConditions />} />
+        <Route path="return" element={<ReturnPolicy />} />
+        <Route path="privacy" element={<PrivacyPolicy />} />
+
+      </Routes>
     </div>
   );
 }
